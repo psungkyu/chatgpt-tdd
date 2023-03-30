@@ -19,6 +19,4 @@ jobs:
         echo "Commit SHA: ${{ github.event.head_commit.id }}"
     - name: Check updated codes
       run: |
-        git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
-
-
+        git diff --exit-code --name-only ${{ github.event.before }} ${{ github.event.after }}
